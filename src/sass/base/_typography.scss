@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+
+body {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: font-weight(medium);
+  font-family: 'Manrope', sans-serif;
+}
+
+h1 {
+  @include text-property (3.5rem, 3.625rem, 2px);
+  @include resposive-fonts($h1-font-sizes);
+  @include resposive-line-heights($h1-line-heights);
+  color: $white;
+}
+
+h2 {
+  @include text-property (2.5rem, 2.75rem, 1.5px);
+  @include resposive-fonts($h2-font-sizes);
+  @include resposive-line-heights($h2-line-heights);
+  color: $black;
+}
+
+h3 {
+  @include text-property (2rem, 2.25rem, 1.15px);
+  @include resposive-fonts($h3-font-sizes);
+  color: $black;
+}
+
+h4 {
+  @include text-property (1.75rem, 2.375rem, 2px);
+  color: $black;
+}
+
+h5 {
+  @include text-property (1.5rem, 2rem, 1.7px);
+  color: $black;
+}
+
+h6 {
+  @include text-property (1.125rem, 1.5rem, 1.3px);
+  color: $black;
+}
+
+%text-overline {
+  @include text-property (0.875rem, 1.2rem, 10px, weight(regular));
+  @include resposive-line-heights($text-overline-line-heights);
+}
+
+%subtitle {
+  @include text-property (0.8rem, 1.56rem, 1px);
+}

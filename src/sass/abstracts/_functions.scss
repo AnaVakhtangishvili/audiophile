@@ -1,0 +1,15 @@
+@function font-weight($weight) {
+  @return map-get($font-weights, $weight);
+}
+
+@function breakpoints($screen-size) {
+  @return map-get($breakpoints, $screen-size);
+}
+
+// @function wrapper-width($width) {
+//   @if((100vw - #{$width}) < 80px) {
+//     @return calc(100vw - 80px);
+//   } @else {
+//     @return $width;
+//   }
+// }

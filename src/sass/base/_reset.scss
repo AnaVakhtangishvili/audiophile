@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+}
+
+a[tabindex='0']:focus-visible, button[tabindex='0']:focus-visible, #cart-icon:focus-visible {
+  border: 3px dashed #ff5e00;
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>audiophile</title>
+  <link rel="icon" href="images/favicon-32x32.ico" type="image-x/icon">
+</head>
+<body>
+  <div class="container checkout-background">
+    <header>
+      <!-- responsive menu starts here -->
+      <div class="responsive-menu-container">
+        <section class="category" id="menu-category">
+          <div class="category__headphones category__styles">
+            <a class="category__link" href="headphones.html"></a>
+            <img class="category__image" src="images/shared/desktop/image-category-thumbnail-headphones.png" alt="headphones">
+            <h6>headphones</h6>
+            <button class="btn-with-arrow">shop <img src="images/shared/desktop/icon-arrow-right.svg" alt=""></button>
+          </div>
+  
+          <div class="category__speakers category__styles">
+            <a class="category__link" href="speakers.html"></a>
+            <img class="category__image" src="images/shared/desktop/image-category-thumbnail-speakers.png" alt="speakers">
+            <h6>speakers</h6>
+            <button class="btn-with-arrow">shop <img src="images/shared/desktop/icon-arrow-right.svg" alt=""></button>
+          </div>
+  
+          <div class="category__earphones category__styles">
+            <a class="category__link" href="earphones.html"></a>
+            <img class="category__image" src="images/shared/desktop/image-category-thumbnail-earphones.png" alt="earphones">
+            <h6>earphones</h6>
+            <button class="btn-with-arrow">shop <img src="images/shared/desktop/icon-arrow-right.svg" alt=""></button>
+          </div>
+        </section>
+      </div>
+      <!-- responsive menu ends here -->
+
+      <!-- cart modal starts here -->
+      <div class="modal">
+        <div class="modal__wrapper">
+          <div class="modal__cart" id="modal-cart">
+            <div class="modal__cart--styles">
+              <h6>cart (3)</h6>
+              <p class="remove-all">Remove all</p>
+            </div>
+            <div class="modal__cart--styles">
+              <div class="product-and-quantity">
+                <div class="modal__cart--styles__product">
+                  <div class="product-details">
+                    <img src="images/cart/image-xx99-mark-two-headphones.jpg" alt="">
+                    <p><b>XX99 MK II</b></p>
+                    <p class="txt-opacity">$ 2,999</p>
+                  </div>
+                  <span class="quantity"><span>-</span>1<span>+</span></span>
+                </div>
+                <div class="modal__cart--styles__product">
+                  <div class="product-details">
+                    <img src="images/cart/image-yx1-earphones.jpg" alt="">
+                    <p><b>YX1</b></p>
+                    <p class="txt-opacity">$ 599</p>
+                  </div>
+                  <span class="quantity"><span>-</span>1<span>+</span></span>
+                </div>
+                <div class="modal__cart--styles__product">
+                  <div class="product-details">
+                    <img src="images/cart/image-zx9-speaker.jpg" alt="">
+                    <p><b>ZX9 SPEAKER</b></p>
+                    <p class="txt-opacity">$ 4,500</p>
+                  </div>
+                  <span class="quantity"><span>-</span>1<span>+</span></span>
+                </div>
+              </div>
+            </div>
+            <div class="modal__cart--styles">
+              <p class="txt-opacity">total</p>
+              <h6>$ 8,098</h6>
+            </div>
+            <button class="btn-primary"><a href="checkout.html">checkout</a></button>
+          </div>
+        </div>
+      </div>
+      <!-- cart modal ends here -->
+      <nav class="navbar">
+        <div class="menu-btn">
+          <span class="menu-btn__burger"></span>
+        </div>
+        <a href="index.html" class="navbar__logo"><img src="images/shared/desktop/logo.svg" alt="audiophile-logo"></a>
+        <ul class="navbar__menu">
+          <li><a class="navbar__links" href="index.html">home</a></li>
+          <li><a class="navbar__links" href="headphones.html">headphones</a></li>
+          <li><a class="navbar__links" href="speakers.html">speakers</a></li>
+          <li><a class="navbar__links" href="earphones.html">earphones</a></li>
+        </ul>
+        <div class="navbar__cart-quantity" id="cart-icon">
+          <img src="images/shared/desktop/icon-cart.svg" alt="" class="navbar__cart">
+          <span>3</span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="category-main">
+      <div class="main__wrapper--category">
+        <span class="go-back" id="go-back">go back</span>
+        <form action="checkout.php" method="post">
+          <div class="inputs-container">
+            <h3>checkout</h3>
+            <fieldset class="billing">
+              <legend>billing details</legend>
+              <div class="input-and-label">
+                <label for="name">name</label>
+                <input type="text" id="name" name="name" placeholder="full name">
+              </div>
+              <div class="input-and-label">
+                <label for="mail">mail</label>
+                <input type="mail" id="mail" name="mail" placeholder="something@mail.com">
+              </div>
+              <div class="input-and-label">
+                <label for="number">number</label>
+                <input type="number" id="number" name="number" placeholder="+1 (202) 555-0136">
+              </div>
+            </fieldset>
+
+            <fieldset class="shipping">
+              <legend>shipping info</legend>
+              <div class="input-and-label address">
+                <label for="address">address</label>
+                <input type="text" id="address" name="address" placeholder="write shipping address">
+              </div>
+              <div class="input-and-label">
+                <label for="zip">ZIP code</label>
+                <input type="number" id="zip" name="zip" placeholder="write zip code">
+              </div>
+              <div class="input-and-label">
+                <label for="city">city</label>
+                <input type="text" id="city" name="city" placeholder="write city">
+              </div>
+              <div class="input-and-label">
+                <label for="country">country</label>
+                <input type="text" id="country" name="country" placeholder="write country">
+              </div>
+            </fieldset>
+
+            <fieldset class="payment">
+              <legend>payment details</legend>
+              <label class="payment__method-lbl">Payment Method</label>
+              <div class="radio">
+                <input type="radio" class="radio__btn" id="e-money" name="payment-method" value="e-money" checked="checked">
+                <label class="radio-lbl" for="e-money">e-money</label>
+              </div>
+              <div class="radio">
+                <input type="radio" class="radio__btn" id="cash" name="payment-method" value="cash">
+                <label class="radio-lbl" for="cash">Cash on Delivery</label>
+              </div>
+              <div id="changing-content-container">
+                <div class="input-and-label">
+                  <label for="e-money-number">e-money number</label>
+                  <input type="number" id="e-money-number" name="e-money-number" placeholder="write e-money number">
+                </div>
+                <div class="input-and-label">
+                  <label for="e-money-pin">e-money pin</label>
+                  <input type="number" id="e-money-pin" name="e-money-pin" placeholder="write e-money pin">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="modal__cart" id="modal-cart-form">
+            <div class="modal__cart--styles">
+              <h6>summary</h6>
+              <p class="remove-all">Remove all</p>
+            </div>
+            <div class="modal__cart--styles">
+              <div class="product-and-quantity">
+                <div class="modal__cart--styles__product">
+                  <div class="product-details">
+                    <img src="images/cart/image-xx99-mark-two-headphones.jpg" alt="">
+                    <p><b>XX99 MK II</b></p>
+                    <p class="txt-opacity">$ 2,999</p>
+                  </div>
+                  <span class="product-quantity">x1</span>
+                </div>
+                <div class="modal__cart--styles__product">
+                  <div class="product-details">
+                    <img src="images/cart/image-yx1-earphones.jpg" alt="">
+                    <p><b>YX1</b></p>
+                    <p class="txt-opacity">$ 599</p>
+                  </div>
+                  <span class="product-quantity">x1</span>
+                </div>
+                <div class="modal__cart--styles__product">
+                  <div class="product-details">
+                    <img src="images/cart/image-zx9-speaker.jpg" alt="">
+                    <p><b>ZX9 SPEAKER</b></p>
+                    <p class="txt-opacity">$ 4,500</p>
+                  </div>
+                  <span class="product-quantity">x1</span>
+                </div>
+              </div>
+            </div>
+            <div class="taxes">
+              <div class="modal__cart--styles">
+                <p class="txt-opacity">total</p>
+                <h6>$ 8,098</h6>
+              </div>
+              <div class="modal__cart--styles">
+                <p class="txt-opacity">shipping</p>
+                <h6>$ 50</h6>
+              </div>
+              <div class="modal__cart--styles">
+                <p class="txt-opacity">vat (included)</p>
+                <h6>$ 1,285</h6>
+              </div>
+            </div>
+            <div class="modal__cart--styles">
+              <p class="txt-opacity">total</p>
+              <h6 class="grand-total">$ 8,148</h6>
+            </div>
+            <button type="submit" class="btn-primary btn-add" id="submit-btn"><span>continue</span></button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <nav class="navbar">
+        <a href="index.html" class="navbar__logo"><img src="images/shared/desktop/logo.svg" alt="audiophile-logo"></a>
+        <ul class="navbar__menu">
+          <li><a class="navbar__links" href="index.html">home</a></li>
+          <li><a class="navbar__links" href="headphones.html">headphones</a></li>
+          <li><a class="navbar__links" href="speakers.html">speakers</a></li>
+          <li><a class="navbar__links" href="earphones.html">earphones</a></li>
+        </ul>
+      </nav>
+
+      <div class="texts_and_socials">
+        <p class="about-txt">Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we're open 7 days a week.</p>
+        <p>Copyright 2021. All Rights Reserved</p>
+        <ul class="social-icons">
+          <li><a href="https://www.facebook.com" target="_blank"><img src="images/shared/desktop/icon-facebook.svg" alt="fb"></a></li>
+          <li><a href="https://www.instagram.com" target="_blank"><img src="images/shared/desktop/icon-instagram.svg" alt="insta"></a></li>
+          <li><a href="https://www.twitter.com" target="_blank"><img src="images/shared/desktop/icon-twitter.svg" alt="twitter"></a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

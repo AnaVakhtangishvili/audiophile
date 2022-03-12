@@ -1,0 +1,123 @@
+.product-page {
+
+  .description__text--info {
+    margin: 2rem 0;
+  }
+
+  span {
+    display: inline-block;
+  };
+  
+  .btn-and-quantity {
+    @include flex(center, flex-start);
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+}
+
+.main-info {
+  @include flex(start, space-between);
+  p {
+    color: rgba($color: $black, $alpha: 0.5);
+  }
+
+  &__features {
+    width: 57%;
+
+    p:nth-child(2) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__box {
+    width: 31.5%;
+    text-transform: capitalize;
+
+    span {
+      margin-right: 1.5rem;
+      color: rgba($color: $primary, $alpha: 1);
+    }
+  }
+
+  h3 {
+    margin-bottom: 2rem;
+  }
+}
+
+.galery {
+  display: grid;
+  grid-template-columns: 40% 57%;
+  grid-template-rows: repeat(2, calc(50% - 1rem));
+  gap: 2rem;
+
+  :nth-child(3) {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  picture {
+    @include picture-config(100%, auto, flex);
+  }
+
+  img {
+    border-radius: 8px;
+    @include image-fit(100%, 100%, cover);
+  }
+}
+
+.suggestions {
+  @include flex (center, center);
+  flex-direction: column;
+  gap: 2.5rem;
+
+  &__products-container {
+    @include flex (center, space-between);
+  }
+
+  &__product {
+    width: 32%;
+    text-align: center;
+
+    picture {
+      @include picture-config(100%, auto, flex);
+    }
+  
+    img {
+      border-radius: 8px;
+      @include image-fit(100%, 100%, cover);
+    }
+
+    h5 {
+      margin: 1.5rem 0;
+    }
+  }
+}
+
+.go-back {
+  color: rgba($color: $black, $alpha: 0.5);
+  text-transform: capitalize;
+  cursor: pointer;
+  position: absolute;
+  top: -3.5rem;
+  left: 0;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &::after { 
+    content: "";
+    width: 0;
+    height: 2px;
+    background: $primary;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    @include transition;
+  }
+  &:hover::after { 
+    width: 100%; 
+    left: 0;
+  }
+}

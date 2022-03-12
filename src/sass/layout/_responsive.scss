@@ -1,0 +1,296 @@
+@include media-tablet {
+
+  // navbar
+  header {
+    .navbar {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 40px;
+
+      .menu-btn {
+        display: block;
+      }
+
+      .navbar__menu {
+        display: none;
+      }
+    }
+  }
+
+  // home page
+  .hero-section {
+    &__wrapper {
+      flex-direction: column;
+      position: relative;
+    }
+
+    &__text {
+      width: 81%;
+      text-align: center;
+      position: absolute;
+      top: center;
+      transform: translateY(30%);
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+
+  // home page main section
+  .main .main__wrapper .main__products {
+
+    &--zx9 {
+      @include flex(center, center);
+      flex-direction: column;
+      gap: 64px;
+      padding: 60px 0;
+      background-position: -7rem -15rem;
+
+      picture {
+        @include picture-config (170px, auto, flex);
+      }
+
+      &--info-div {
+        width: 50%;
+        text-align: center;
+        margin: 0;
+      }
+    }
+    
+  }
+
+  // shared sections
+  // ---best gear---
+  .best-gear {
+    flex-direction: column-reverse;
+    gap: 4em;
+
+    &__text {
+      width: 90%;
+      text-align: center
+    }
+  
+    picture {
+      @include picture-config (100%, 300px, flex);
+
+      img {
+        @include image-fit(100%, 100%, cover)
+      }
+    }
+  }
+
+  // footer
+  footer {
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    .texts_and_socials {
+      grid-template-areas: "a a" "d c";
+
+      .social-icons {
+        align-self: end;
+      }
+    }
+  }
+
+  // category pages
+  .main__wrapper--category .product-galery .product-and-description {
+    flex-direction: column;
+    gap: 2.5rem;
+    
+    picture {
+      @include picture-config(100%);
+    }
+
+    .description {
+      text-align: center;
+      width: 80%;
+    }
+  }
+
+  //product page
+  .main-info {
+    flex-direction: column;
+    @include product-gap ($category-layout-gap);
+
+    &__features {
+      width: 100%;
+    }
+  
+    &__box {
+      @include flex(start, start);
+      width: 100%;
+      gap: 22%;
+    }
+  }
+}
+
+
+// mobile media-------------------------------------------
+@include media-mobile {
+  // home page
+  //header
+  header {
+    .navbar {
+      grid-template-columns: auto auto auto;
+    }
+  }
+
+  //hero section
+  .hero-section__text {
+    width: 95%;
+  }
+
+  //main
+  .main .main__wrapper .main__products {
+    &--zx9--info-div{
+      width: 80%;
+    }
+  }
+
+  // categories
+  .category {
+    flex-direction: column;
+    gap: 5em;
+
+    &__styles {
+      width: 100%;
+    }
+  }
+
+  // footer
+  footer {
+    padding: 3em 0 2.5em;
+
+    .navbar {
+      @include flex(center, center);
+  
+      &::before {
+        content: '';
+        top: -3em;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+  
+      &__menu {
+        @include flex;
+        flex-direction: column;
+        gap: 1em;
+      }
+    }
+
+    .texts_and_socials {
+      @include flex;
+      flex-direction: column;
+
+      .social-icons {
+        align-self: center;
+      }
+    }
+  }
+
+  // cart modal
+  .modal .modal__wrapper .modal__cart {
+    line-height: 100%;
+    width: 100vw;
+  }
+
+  // category page
+  .heading-section h2 {
+    padding: 2rem 0;
+  }
+
+  //product page
+  .galery {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+// additional mobile media-------------------------------------------
+@include additional-breakpoint {
+  .main {
+    &__products {
+      grid-template-rows: auto 320px 320px 320px;
+
+      &--yx1, &--yx1-info {
+        grid-column: 1/3;
+      }
+    }
+  }
+
+  .main-product-details {
+    flex-direction: column;
+    gap: 2rem;
+
+    picture {
+      @include picture-config(100%);
+    }
+
+    .description {
+      width: 100%;
+    }
+  }
+
+  //product page
+  .main-info {
+    &__box {
+      display: block;
+    }
+  }
+
+  // form 
+  form .inputs-container {
+    padding: 2rem;
+
+    fieldset, #changing-content-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cash-instruction {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+
+// only  suggestions mobile-------------------------------------------
+@include suggestions-breakpoint {
+  .suggestions {
+    &__products-container {
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+  
+    &__product {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+// only form TABLET MODE
+@include form-breakpoint {
+  form {
+    flex-direction: column;
+    gap: 1.5rem;
+  
+    .inputs-container {
+      width: 100%;
+    }
+    
+    .modal__cart {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}

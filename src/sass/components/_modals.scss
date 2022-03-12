@@ -1,0 +1,111 @@
+.modal {
+  @include flex(start, center);
+  visibility: hidden;
+  width: 100%;
+  height: 0;
+  background: rgba($color: $black, $alpha: 0.4);
+  position: absolute;
+  z-index: 10;
+
+  &.open {
+    visibility: visible;
+    height: 100vh;
+    top: 0;
+    transition: 0.3s;
+  }
+
+  &__wrapper {
+    @include wrapper-width;
+    @include flex(start, flex-end);
+    @include media-mobile {
+      justify-content: center;
+    }
+  }
+
+  &__cart {
+    width: 90%;
+    max-width: 380px;
+    padding: 30px;
+    background-color: $white;
+    border-radius: 8px;
+    margin: 120px 0;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 32px;
+
+    &--styles {
+      @include flex(center, space-between);
+
+      .product-and-quantity {
+        width: 100%;
+      }
+
+      .remove-all {
+        cursor: pointer;
+        color: rgba($color: $black, $alpha: 0.5);
+        position: relative;
+        padding-bottom: 5px;
+
+        &:hover {
+          color: $primary;
+        }
+
+        &::after { 
+          content: "";
+          width: 0;
+          height: 2px;
+          background: $primary;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          @include transition;
+        }
+        &:hover::after { 
+          width: 100%; 
+          left: 0;
+        }
+      }
+
+      &__product {
+      @include flex(center, space-between);
+
+        .product-details {
+          display: grid;
+          grid-template-rows: 32px auto;
+          grid-template-columns: 80px auto;
+
+          img {
+            width: 64px;
+            height: 64px;
+            grid-column: 1/2;
+            grid-row: 1/3;
+            border-radius: 8px;
+            margin-bottom: 24px;
+          }
+        }
+      }
+
+      .txt-opacity {
+        color: rgba($color: $black, $alpha: 0.5);
+        text-transform: uppercase;
+      } 
+    }
+  }
+}
+
+.quantity {
+  background: $gray;
+  padding: 10px 0;
+
+  span {
+    padding: 5px 20px;
+    font-weight: font-weight(bold);
+    color: rgba($color: $black, $alpha: 0.5);
+    cursor: pointer;
+
+    &:hover {
+      color: $primary;
+      @include transition;
+    }
+  }
+}

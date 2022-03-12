@@ -1,0 +1,139 @@
+.hero-section {
+  @include flex;
+  height: 632px;
+  background: $secondary;
+  overflow: hidden;
+
+  &__wrapper {
+    @include flex(center, space-between);
+    @include wrapper-width;
+    margin: 0 auto;
+  }
+  
+  &__text {
+    width: 36%;
+    position: relative;
+    z-index: 1;
+    animation: fade-in 4s;
+
+    &--overline {
+      @extend %text-overline;
+      opacity: 0.5;
+    }
+    p {
+      color: $white;
+      margin: 24px 0 40px;
+      opacity: 0.75;
+    }
+  }
+
+  &__image {
+    width: 58%;
+    height: 632px;
+    animation: fade-in 2.5s;
+
+    img {
+      @include image-fit(100%, 100%, cover);
+    }
+  }
+}
+
+.main {
+
+  &__wrapper {
+    @include flex;
+    @include wrapper-width;
+    @include layout-gap($home-layout-gap);
+    flex-direction: column;
+  }
+
+  &__products {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 320px 320px;
+    grid-template-columns: repeat(2, calc(50% - 1rem));
+    gap: 3rem 2rem;
+
+    &--zx9 {
+      @include flex(flex-end, space-around);
+      background: url("/src/images/home/desktop/pattern-circles.svg") $primary top left no-repeat;
+      background-position: -10rem -2rem;
+      grid-column: 1/3;
+      margin-top: -32px;
+      padding: 6rem 10% 0 8%;
+      border-radius: 8px;
+      overflow: hidden;
+
+      picture {
+        @include picture-config (350px, auto, flex);
+        margin-bottom: -10px;
+
+        img {
+          @include image-fit(100%, 100%, cover);
+        }
+      }
+
+      &--info-div {
+        width: 32%;
+        margin-bottom: 4rem;
+
+         .heading {
+          @include text-property (3.5rem, 3.625rem, 2px);
+          @include resposive-fonts($h1-font-sizes);
+          @include resposive-line-heights($h1-line-heights);
+          color: $white;
+        }
+
+        p:nth-child(2) {
+          color: $white;
+          margin: 24px 0 40px;
+          color: rgba($color: $white, $alpha: 0.75);
+        }
+      }
+
+    }
+
+    &--zx7 {
+      grid-column: 1/3;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+
+      picture {
+        @include picture-config (100%, 100%, flex);
+
+        img {
+          @include image-fit;
+          object-position: bottom;
+        }
+      }
+    }
+
+    &--yx1 {
+      border-radius: 8px;
+      overflow: hidden;
+
+      picture {
+        @include picture-config (100%, 100%, flex);
+
+        img {
+          @include image-fit;
+        }
+      }
+    }
+
+    &--yx1-info {
+      background: $gray;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .see-product {
+      margin-left: 8%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+  }
+}

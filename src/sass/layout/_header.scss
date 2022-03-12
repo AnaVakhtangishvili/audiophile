@@ -1,0 +1,20 @@
+.container {
+  display: grid;
+  grid-template-rows: 96px auto 1fr auto;
+
+  header {
+    @include flex;
+    width: 100%;
+    background: $secondary;
+    position: relative;
+
+    &::after {
+      @include wrapper-width;
+      content: '';
+      height: 1px;
+      background: rgba($white, $alpha: 0.2);
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+// abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/functions';
+@import 'abstracts/animations';
+
+// base
+@import 'base/reset';
+@import 'base/typography';
+
+// components
+@import 'components/buttons';
+@import 'components/modals';
+
+//pages
+@import 'pages/home';
+@import 'pages/category';
+@import 'pages/product';
+
+// layout
+@import 'layout/navigation';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/forms';
+@import 'layout/shared';
+@import 'layout/responsive';

@@ -1,0 +1,57 @@
+footer {
+  @include flex(center, start);
+  flex-direction: column;
+  background: $secondary;
+  padding: 5rem 0 3rem;
+
+  .navbar {
+    position: relative;
+    margin-bottom: 35px;
+
+    &::before {
+      content: '';
+      width: 101px;
+      height: 4px;
+      background: $primary;
+      position: absolute;
+      top: -5rem;
+      left: 0;
+    }
+  }
+  
+  &__menu {
+    margin: 0;
+    max-width: $wrapper-widht;
+  }
+
+  .texts_and_socials {
+    @include wrapper-width;
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    grid-template-areas: "a c" "d c";
+    row-gap: 3rem;
+
+    p {
+      color: rgba($color: $white, $alpha: 0.5);
+    }
+    .about-txt {
+      grid-area: a;
+    }
+
+    :nth-child(2) {
+      grid-area: d;
+    }
+
+    .social-icons {
+      @include flex;
+      grid-area: c;
+      justify-self: end;
+      gap: 16px;
+
+      a:hover {
+        @include transition;
+        filter: invert(49%) sepia(100%) saturate(271%) hue-rotate(338deg) brightness(94%) contrast(104%);
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+//colors
+$primary: #D87D4A;
+$secondary: #101010;
+$gray: #F1F1F1;
+$gray-light: #FAFAFA;
+$black: #000000;
+$white: #ffffff;
+$hover-primary: #FBAF85;
+$hover-dark: #4C4C4C;
+
+
+//wrapper width
+$wrapper-max-widht: 1110px;
+$wrapper-widht: calc(100vw - 3rem);
+$picture-height: $wrapper-widht/2;
+
+// brakepoint variables
+$tablet: 768px;
+$mobile: 500px;
+$additional-breakpoint: 600px;
+$suggestions-breakpoint: 700px;
+$form-breakpoint: 900px;
+
+//font maps
+$font-weights: (
+  regular: 400,
+  medium: 500,
+  bold: 700
+);
+
+$h1-font-sizes: (
+  initial: 3.5rem,
+  600px: 2.25rem,
+);
+
+$h2-font-sizes: (
+  initial: 2.5rem,
+  768px: 1.75rem
+);
+
+$h3-font-sizes: (
+  initial: 2rem,
+  500px: 1.5rem
+);
+
+$h1-line-heights: (
+  initial: 3.625rem,
+  500px: 2.5rem
+);
+
+$h2-line-heights: (
+  initial: 3.625rem,
+  768px: 2rem
+);
+
+$text-overline-line-heights: (
+  initial: 2rem,
+  500px: 1.5rem
+);
+
+//gap maps
+$home-layout-gap: (
+  initial: 12.5rem,
+  850px: 7rem
+);
+
+$category-layout-gap: (
+  initial: 10rem,
+  850px: 7rem,
+  500px: 4rem
+);
+
+// breakpoints
+$breakpoints: (
+  tablet: $tablet,
+  mobile: $mobile,
+  additional: $additional-breakpoint,
+  suggestions: $suggestions-breakpoint,
+  form: $form-breakpoint
+)

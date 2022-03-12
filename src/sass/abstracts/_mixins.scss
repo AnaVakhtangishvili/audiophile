@@ -1,0 +1,129 @@
+@mixin flex($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin wrapper-width {
+  width: $wrapper-widht;
+  max-width: $wrapper-max-widht;
+  
+}
+
+@mixin text-property ($size, $line-height, $spacing, $weight: font-weight(bold), $transform: uppercase) {
+  font-size: $size;
+  font-weight: $weight;
+  text-transform: $transform;
+  line-height: $line-height;
+  letter-spacing: $spacing;
+}
+
+@mixin resposive-fonts ($map) {
+  @each $breakpoint, $size in $map {
+    @if $breakpoint == initial {
+      font-size: $size;
+    } @else {
+      @media screen and (max-width: $breakpoint) {
+        font-size: $size;
+      }
+    }
+  }
+}
+
+@mixin resposive-line-heights ($map) {
+  @each $breakpoint, $height in $map {
+    @if $breakpoint == initial {
+      line-height: $height;
+    } @else {
+      @media screen and (max-width: $breakpoint) {
+        line-height: $height;
+      }
+    }
+  }
+}
+
+@mixin transition {
+  transition: all .3s ease-in-out;
+}
+
+@mixin button ($background-color, $border, $cursor: pointer) {
+  background: $background-color;
+  border: $border;
+  cursor: $cursor;
+}
+
+@mixin button-link ($text-color, $padding: 15px 30px){
+  @extend %subtitle;
+  display: inline-block;
+  color: $text-color;
+  padding: $padding;
+}
+
+@mixin picture-config ($width, $height: $picture-height, $display: block) {
+  display: $display;
+  width: $width;
+  height: $height;
+}
+
+@mixin image-fit ($width: 100%, $height: 100%, $object-fit: cover){
+  width: $width;
+  height: $height;
+  object-fit: $object-fit;
+  border-radius: 8px;
+}
+
+@mixin layout-gap ($map) {
+  @each $breakpoint, $gap in $map {
+    @if $breakpoint == initial {
+      gap: $gap;
+      margin: $gap auto;
+    } @else {
+      @media screen and (max-width: $breakpoint) {
+        gap: $gap;
+        margin: $gap auto;
+      }
+    }
+  }
+}
+
+@mixin product-gap ($map) {
+  @each $breakpoint, $gap in $map {
+    @if $breakpoint == initial {
+      gap: $gap;
+    } @else {
+      @media screen and (max-width: $breakpoint) {
+        gap: $gap;
+      }
+    }
+  }
+}
+
+@mixin media-tablet {
+  @media screen and (max-width: breakpoints(tablet)) {
+    @content;
+  }
+}
+
+@mixin media-mobile {
+  @media screen and (max-width: breakpoints(mobile)) {
+    @content;
+  }
+}
+
+@mixin additional-breakpoint {
+  @media screen and (max-width: breakpoints(additional)) {
+    @content;
+  }
+}
+
+@mixin suggestions-breakpoint {
+  @media screen and (max-width: breakpoints(suggestions)) {
+    @content;
+  }
+}
+
+@mixin form-breakpoint {
+  @media screen and (max-width: breakpoints(form)) {
+    @content;
+  }
+}

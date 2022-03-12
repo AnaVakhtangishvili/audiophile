@@ -1,0 +1,83 @@
+.category {
+  @include flex(center, space-between);
+  width: 100%;
+
+  &__styles {
+    @include flex;
+    flex-direction: column;
+    width: 31%;
+    background: $gray;
+    padding: 5rem 0 1.875rem;
+    border-radius: 8px;
+    position: relative;
+
+    &:hover button {
+      color: $primary;
+      @include transition;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+  }
+
+  &__image {
+    width: 138px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translate(50%, -40%);
+  }
+
+  h6 {
+    margin-bottom: 15px;
+  }
+}
+
+.best-gear {
+  @include flex(center, space-between);
+
+  &__text {
+    width: 40%;
+
+    h2 {
+      margin-bottom: 32px;
+
+      span {
+        color: $primary;
+      }
+    }
+
+    p {
+      opacity: 0.5;
+    }
+  }
+
+  picture {
+    @include picture-config (48%, $picture-height, flex);
+
+    img {
+      @include image-fit(100%, 100%, contain);
+    }
+  }
+}
+
+// scroll styles
+::-webkit-scrollbar {
+  width: 5px;
+
+  &-track {
+    border-radius: 10px;
+  }
+
+  &-thumb {
+    background: $primary;
+    border-radius: 10px;
+  }
+}

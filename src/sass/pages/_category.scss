@@ -1,0 +1,53 @@
+.heading-section {
+  h2 {
+    color: $white;
+    background: $secondary;
+    text-align: center;
+    padding: 6.1rem 0;
+  }
+}
+
+.main__wrapper--category {
+  @include flex;
+  @include wrapper-width;
+  @include layout-gap($category-layout-gap);
+  flex-direction: column;
+  position: relative;
+}
+
+.product-galery {
+  @include flex;
+  @include product-gap ($category-layout-gap);
+  flex-direction: column;
+
+  .product-and-description:nth-child(even){
+    flex-direction: row-reverse;
+  }
+}
+
+.product-and-description {
+  @include flex(center, space-between);
+
+    picture {
+      @include picture-config(49%);
+
+      img {
+        @include image-fit;
+      }
+    }
+
+  .description {
+    width: 40%;
+
+    &__text--overline {
+      @extend %text-overline;
+      color: $primary;
+      margin-bottom: 16px;
+    }
+
+    &__text--info {
+      margin: 2rem 0 2.5rem;
+      opacity: 0.5;
+    }
+  }
+}

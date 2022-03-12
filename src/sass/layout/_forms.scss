@@ -1,0 +1,135 @@
+.checkout-background {
+  background: $gray;
+}
+
+form {
+  @include flex(start, space-between);
+  width: 100%;
+
+  .inputs-container {
+    @include flex(center, flex-start);
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 63%;
+    background: $white;
+    border-radius: 8px;
+    padding: 3rem;
+
+    fieldset {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, calc(50% - 0.5rem));
+      gap: 1rem;
+
+      legend {
+        @extend %subtitle;
+        color: $primary;
+      }
+      
+      input, .radio {
+        width: 100%;
+        padding: 20px 25px;
+        border: 1px solid #cfcfcf;
+        border-radius: 8px;
+      }
+
+      input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      .radio-lbl, ::placeholder {
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+
+      input[type='radio'] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        position: relative;
+
+        &:checked {
+          
+          &:before {
+            content: '';
+            display: inline-block;
+            width: 1.2rem;
+            height: 1.2rem;
+            background: $primary;
+            border-radius: 50%;
+            border: 1px solid #cfcfcf; 
+            box-shadow: inset 0 0 0 4px $white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    
+      label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+
+      .radio {
+        @include flex(center, start);
+        width: auto;
+        height: auto;
+  
+        &__btn {
+          margin-right: 1rem;
+        }
+      }
+
+      .address {
+        grid-column: 1/3;
+      }
+
+      .payment {
+        &__method-lbl {
+          grid-row: 1/3;
+        }
+      }
+    }
+
+    #changing-content-container {
+      display: grid;
+      grid-template-columns: repeat(2, calc(50% - 0.5rem));
+      gap: 1rem;
+      grid-column: 1/3;
+    }
+
+    .cash-instruction {
+      grid-column: 1/3;
+      color: rgba($color: $black, $alpha: 0.5);
+
+      img {
+        float: left;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .modal__cart {
+    width: 35%;
+    margin: 0;
+
+    .product-quantity {
+      color: rgba($color: $black, $alpha: 0.5);
+    }
+
+    .taxes {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .grand-total {
+      color: $primary;
+    }
+  }
+}
